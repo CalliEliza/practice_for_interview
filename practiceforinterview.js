@@ -42,15 +42,16 @@ var primFactor = function () {
     var primNum = [];
     for (i = 1; i <= nmbr; ++i) {
         if ( nmbr % i === 0 ) {
-            if (i % 2 !== 0 || i % 3 !== 0 || i % 4 !== 0 || i % 5 !== 0 || i % 6 !== 0 || i % 7 !== 0 || i % 8 !== 0 || i % 9 !== 0 || i % 10 !== 0 || i % 11 !== 0) {
-                primNum.push(i);
+            for (j = 1; j <= 15; ++j) {
+                if (i % j !== 0) {
+                    primNum.push(i);
+                }
             }
         }
     }
     primNum.sort();
     largPrimNum = primNum.pop();
     return largPrimNum;
-    return primNum;
 };
 
 

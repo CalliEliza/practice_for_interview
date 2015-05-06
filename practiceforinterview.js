@@ -37,15 +37,19 @@ var evenFib = function () {
 // largest prime factor
 
 var primFactor = function () {
-    var nmbr = 600851475143;
+    var nmbr = 81 /*600851475143*/;
     var largPrimNum = 0;
     var primNum = [];
-    for (i = 1; i <= nmbr; ++i) {
-        if ( nmbr % i === 0 ) {
-            for (j = 1; j <= 15; ++j) {
-                if (i % j !== 0) {
-                    primNum.push(i);
+    for (i = 2; i < nmbr; ++i) { //loops through all numbers
+        var prm = false;
+        for (j = 2; j < i; ++j) {  // loops through those
+            if ( nmbr % i === 0 ) { // checks for numbers that the main# is divisible by
+                if (i % j !== 0) {  // if they are prime, set prm as true
+                    prm = true;
                 }
+            if  (prm === true) { // add to array
+                    primNum.push(i);
+                 }
             }
         }
     }

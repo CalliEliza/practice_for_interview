@@ -14,7 +14,6 @@ var sum3_5 = function () {
     return sum;
 };
 
-console.log(sum3_5());
 
 
 // even fibonacci numbers, finding the sum

@@ -47,6 +47,9 @@ var primFactor = function () {
             }
         }
     }
+    primNum.sort();
+    largPrimNum = primNum.pop();
+    return largPrimNum;
     return primNum;
 };
 

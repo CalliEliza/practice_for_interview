@@ -36,10 +36,14 @@ var evenFib = function () {
 var primFactor = function () {
     var nmbr = 600851475143;
     var largPrimNum = 0;
+    var primNum = [];
     for (i = 1; i <= nmbr; ++i) {
         if ( nmbr % i === 0 ) {
-
+            if (i % 2 !== 0 || i % 3 !== 0 || i % 4 !== 0 || i % 5 !== 0 || i % 6 !== 0 || i % 7 !== 0 || i % 8 !== 0 || i % 9 !== 0 || i % 10 !== 0 || i % 11 !== 0) {
+                primNum.push(i);
+            }
         }
     }
+    return primNum;
 };
 

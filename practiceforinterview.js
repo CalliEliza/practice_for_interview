@@ -36,26 +36,46 @@ var evenFib = function () {
 
 // largest prime factor
 
-var primFactor = function () {
-    var nmbr = 81 /*600851475143*/;
-    var largPrimNum = 0;
-    var primNum = [];
-    for (i = 2; i < nmbr; ++i) { //loops through all numbers
-        var prm = false;
-        for (j = 2; j < i; ++j) {  // loops through those
-            if ( nmbr % i === 0 ) { // checks for numbers that the main# is divisible by
-                if (i % j !== 0) {  // if they are prime, set prm as true
-                    prm = true;
-                }
-            if  (prm === true) { // add to array
-                    primNum.push(i);
-                 }
-            }
+var is_prime = function (num) {
+    for (i = 1; i< 10; ++i) {
+        if (num === 2) {
+            return true;
+        }
+        else if (num % i === 0 ) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
-    primNum.sort();
-    largPrimNum = primNum.pop();
-    return largPrimNum;
+};
+
+var prim_fact = function (nmbr) {
+    var num1 = 0;
+    var num2 = 0;
+    var num3 = 0;
+    var i = 2;
+    if (nmbr % 2 === 0) {
+        num1 = nmbr / 2;
+    }
+    if (is_prime(num1)) {
+        return num1;
+    }
+    while (i < num1) {
+        if (num1 % i === 0) {
+            num2 = num1 / i;
+        }
+        else {
+            ++i;
+        }
+        if (is_prime(num2)) {
+            return num2;
+        }
+        else {
+            num2 = num1;
+        }
+        ++i;
+    }
 };
 
 

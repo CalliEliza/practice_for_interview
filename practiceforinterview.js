@@ -6,8 +6,8 @@
 // multiples of 3 & 5, return sum
 var sum3_5 = function () {
     var sum = 0;
-    for (i = 1; i <= 1000; ++i) {
-        if ((i % 3 === 0 || i % 5 === 0) && (i % 3 === 0 && i % 5 === 0)) {
+    for (i = 1; i < 1000; ++i) {
+        if ((i % 3 === 0 || i % 5 === 0) || (i % 3 === 0 && i % 5 === 0)) {
             sum += i;
         }
     }
@@ -18,12 +18,16 @@ var sum3_5 = function () {
 
 // even fibonacci numbers, finding the sum
 var evenFib = function () {
-    var FibNum = 1;
-    var sum = 0;
-    for (i = 0; i <=10000; ++i) {
-        FibNum += i +3;
-        if (FibNum % 2 === 0 ) {
-            sum++;
+    var f2 = 2;
+    var sum = 2;
+    var f1 = 1;
+    while (sum < 4000000) {
+        f1 = f1 + f2;
+        if (f2 % 2 === 0 ) {
+            sum = sum + f1;
+        }
+        else if ( f2 % 2 === 0) {
+            sum = sum + f2;
         }
     }
     return sum;
@@ -46,3 +50,14 @@ var primFactor = function () {
     return primNum;
 };
 
+
+// largest palindrome product
+
+var palindrome = function () {
+    var product = 1;
+
+    for (i = 100; i < 1000; i ++i) {
+        var tempValue = i * i +1;
+        if () {}
+    }
+};

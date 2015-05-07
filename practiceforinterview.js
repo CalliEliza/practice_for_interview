@@ -30,47 +30,57 @@ var evenFib = function () {
 };
 
 
-// largest prime factor
 
+// largest prime function
 var is_prime = function (num) {
-    for (i = 1; i< 10; ++i) {
-        if (num === 2) {
-            return true;
-        }
-        else if (num % i === 0 ) {
+    if (num === 2) {
+        return true;
+    }
+
+    for (var i = 3; i < num; ++i) {
+        if (num % i === 0) {
             return false;
         }
-        else {
-            return true;
-        }
     }
+    return true;
 };
+
+
 
 var prim_fact = function (nmbr) {
     var num1 = 0;
     var num2 = 0;
-    var num3 = 0;
+    var j = 2;
     var i = 2;
-    if (nmbr % 2 === 0) {
-        num1 = nmbr / 2;
+    if (nmbr === 2) {
+        return 2;
     }
-    if (is_prime(num1)) {
-        return num1;
-    }
-    while (i < num1) {
-        if (num1 % i === 0) {
-            num2 = num1 / i;
+    while( i < nmbr/2) {   // if (nmbr % 2 === 0) { num1 = nmbr / 2;}
+        if (nmbr % i === 0) {
+
+            num1 = nmbr / i;
         }
         else {
             ++i;
         }
-        if (is_prime(num2)) {
-            return num2;
+    }
+    if (is_prime(num1)) {
+        return num1;
+    }
+    while (j < num1) {
+        if (num1 % j === 0) {
+            num2 = num1 / j;
         }
         else {
+            ++j;
             num2 = num1;
         }
-        ++i;
+        if (is_prime(num1)) {
+            return num1;
+        }
+        else {
+            num1 = num2;
+        }
     }
 };
 
